@@ -1,0 +1,52 @@
+In this chapter of miniMaxSum, I will be going through the algorithm thinking process and the code (in C language)
+
+In order to find the minimax sum, the pseudocode is as follows:
+
+miniMaxSum(A){
+  sum=0, min=A[0], max=0; //initializing of variables
+  for (i=1 to n){
+      sum = sum + A[i]; //finding the sum of the array
+    }
+    if ( sum > max ){ //swapping the value of max if the sum is larger than max
+      max = sum;
+    }
+    elif ( sum < max ){ //swapping the value of min if sum is smaller than A[0]. Reason why I initializa min = A[0]: if min = 0, then it will not swap.
+      min = sum;
+    }
+  return miniMaxSum();
+}
+
+However, in this algorithm, what we do is to find the 2 largest sum of the sum of all the elements. In this problem of finding the sum of 4 elements out of 5, 
+it is required that we make use of 2 arrays to find the miniMaxSum. 
+
+Code:
+
+void miniMaxSum(int arr_count, int* arr) {
+    int i, j;
+    int max = 0;
+    int min ;
+    int sum = 0;
+    for (i=0; i<arr_count -1; i++){
+        for (j=0; j<arr_count-i-1; j++){
+            if (arr[j]>arr[j+1]){
+                min = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1]=min;                
+            }
+        }
+    }
+    
+    long int minimal_sum = 0, max_sum = 0;
+    for(int i = 0; i< arr_count-1;i++ )
+    {
+        minimal_sum += arr[i];
+    }
+
+    for(int j = 1; j< arr_count;j++ )
+    {
+         max_sum += arr[j];
+    }
+
+    printf("%ld %ld",minimal_sum,max_sum);
+}
+
