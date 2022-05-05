@@ -1,1 +1,3 @@
-This problem will require that we scan the given string for "P" or "A" then we convert it into 24hour time. 
+This problem will require that we scan the given string for "P" or "A" then we convert it into 24hour time. I know that for this problem, we are to +12 when the first 2
+strings are <= 11 and convert to '00' if the first 2 strings are 12. All the above mentioned steps are to be taken only if s[8] == 'P'. In my code, I thought of
+concating the first 2 strings into integer. Then we state a condition if ( hh <= 11 ){} we do this action. However, I am unable to think of what to do next :(
