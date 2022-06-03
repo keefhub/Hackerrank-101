@@ -1,0 +1,34 @@
+This challenge finds the unique element from a given array. 
+Initially, I was thinking of implementing something rather complicated. My thought process are as follows:
+1. Sort the given array from min to max.
+2. Get the count of repeated element(s), i.e. if (a[i] == a[i+1]), then a_count[a[i]] += 1.
+I think this deployment makes sense, let me know what you think of it. 
+However, when I run the code, it gives a timeout error. 
+
+While I was looking online for some help, I came across a short yet elegant code which works. The following is the code:
+
+int lonelyinteger(int a_count, int* a) {
+    int i=0;
+    int num=0;
+    for(i=0;i<=a_count;i++){
+        num=num^a[i]; --> '^' operation is a bitwise Exclusive OR (XOR) operator. 
+     }   
+    return num;
+}
+
+truth table of XOR operation
+num     a[i] | output 
+ 0        0  |   0
+ 0        1  |   1
+ 1        0  |   1
+ 1        1  |   0
+
+Let's assume the arr a[5] = {0,0,1,2,2}
+by initializing num = 0
+we compare num = num^a[0], we have the comparison of 0000 with 0000 --> output = 0, thus num=0.
+we compare num = num^a[1], we have the comparison of 0000 with 0000 --> output = 0, thus num=0.
+we compare num = num^a[2], we have the comparison of 0000 with 0001 --> output = 1, thus num=1.
+we compare num = num^a[3], we have the comparison of 0001 with 0010 --> output = 3 (0011), thus num=3.
+we compare num = num^a[4], we have the comparison of 0011 with 0010 --> output = 1 (0001), thus num=1.
+
+Personally, I think it is tough to think of such operand to run the code. Never will I thought of this :') 
