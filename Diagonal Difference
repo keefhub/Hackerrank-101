@@ -1,0 +1,47 @@
+Given a square matrix, calculate the absolute difference between the sums of its diagonals. 
+  | 0 1 2 (i)
+ 0| 1 2 3
+ 1| 4 5 6
+ 2| 7 8 9
+(j)
+given this matrix above, we shld find..
+let d1 = sum of diagonals from top left to bottom right (1+5+9) and
+let d2 = sum of diagonals from top right to bottom left (3+5+7)
+then we find abs(d1-d2) or abs(d2-d1).. same
+//tips to getting the value of the array i.e. 
+arr[i][j] = xxx
+in the case of the above matrix, arr[0][0] = 1, arr[0][1] = 4 and etc.. 
+
+pseudocode for this challenge: 
+
+diagonalDifference(arr_row, arr_column_ arr){
+  for (i=0 to arr_row){
+      for(j=0 to arr_column){
+         if (i == j) //refer to the matrix on top, sum of [0][0], [1][1], [2][2] is the sum of matrix value diagonally from top left to bottom right 
+          sum _row += arr[i][j]
+          
+         if ((i+j) == (arr_column -1)) 
+          sum_count += arr[i][j]
+      }
+  }
+  return abs (sum _row - sum_count)
+}
+
+code (C):
+
+int diagonalDifference(int arr_rows, int arr_columns, int** arr) {
+    int i, j, d1=0, d2=0;
+    // d1 is the sum from top left to bot right
+    for (i=0; i<arr_rows; i++){
+        for (j=0; j<arr_columns; j++){
+            if (i==j){
+                d1 += arr[i][j];
+            }
+            
+            if ((i+j)==(arr_columns-1)){
+                d2 += arr[i][j];
+            }
+        }
+    }
+    return abs(d1-d2);
+}
