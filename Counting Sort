@@ -3,7 +3,7 @@ Logic of Counting sort:
 Counting sort in essence is an efficient sorting method compared to traditional comparison sorting. 
 Assume we are to sort the following array using counting sort: 
 arr = [1,3,1,4,5].
-Initialize a count_arr that will have the count from 1 to 5; i.e. 
+Initialize a count_arr that will have elements from 1 to 5; i.e. 
 
           | 1 | 2 | 3 | 4 | 5 | --> elements in the array, in step of 1
 count_arr | 0 | 0 | 0 | 0 | 0 | --> will fill in the frequency which the value occur
