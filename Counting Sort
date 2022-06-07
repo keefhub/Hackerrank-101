@@ -27,9 +27,27 @@ replace the current element in that position of the arr. Since, position '1' is 
 Final arr: 
 [1, 1, 3, 4, 5]
 
+Time complexity of CountingSort is O(n+k). 
+
 Pseudocode: 
 
-n = arr.last() // getting the count of the last element in the array
-for (i=1 to n){ // initialize the count_arr to 0
-   count_arr[i] = 0
-   }
+CountSort(A,B,k){
+   n = arr.last() // getting the count of the last element in the array
+      for (i=1 to k){ // initialize the count_arr to 0
+         count[i] = 0
+      }
+      
+      for(j=1 to n){ // count[i] now contains the no. of elements = i
+          count[A[j]] += 1
+      }
+      
+      for(i=1 to k){ // count[i] now contains the no. of elements <= i
+          count[i] += count[i-1]
+      }
+      
+      for (j=n downto 1){
+          B[count[A[j]]] = A[j] 
+          count[A[j]] -= 1 //decrease counter by 1
+      }
+}
+       
