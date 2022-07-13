@@ -1,4 +1,4 @@
-Logic of Counting sort:
+## Logic of Counting sort:
 
 Counting sort in essence is an efficient sorting method compared to traditional comparison sorting. 
 Assume we are to sort the following array using counting sort: 
