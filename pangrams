@@ -5,7 +5,8 @@ my thought process (using the idea of counting sort):
 1. get the length of char* s
 2. scan through char* s to check for presence for all 26 alphabets
 3. count the checked strings into an array
-4. if all present, then return pangram. else, then return not pangram.
+4. if count==26(no. of alphabet) then pangram, else, not pangram
+5. if all present, then return pangram. else, then return not pangram.
 quick note: a string of char* s may contain uppercase character and may contain non alphabets 
 
 pseudocode: 
@@ -22,5 +23,30 @@ pangrams(s){
       if(s[i]>='a' && s[i]<='z'){
         arr[s[i]]++ //store the count of each element  
       }
-    ... to be continued
-      
+    
+code (that doesnt work):
+
+char* pangrams(char* s) {
+    int i, total = 0, used[26]={0};
+    for (i=0; i!='\0'; i++){
+
+       
+       if(s[i]>='A' && s[i]<='Z'){
+            total=total+used[s[i]-'A'];
+            used[s[i]-'A']=1;
+        }
+        if(s[i]>='a' && s[i]<='z'){
+            total= total + used[s[i]-'a'];
+            used[s[i]-'a']=1;
+        }
+    }
+    if (total == 26){
+        printf("pangram");
+    }
+    else{ 
+        printf("not pangram");
+    }       
+    return 0;
+}
+
+however, output is stdout: (NULL)
