@@ -6,7 +6,13 @@ import sys
 
 
 def matchingStrings(strings, queries):
-    print('hello world')
+    results = [0] * len(queries)
+
+    for i in range(len(queries())):
+        v = queries[i]
+        results[i] = strings.count(v)   
+
+    return results
 
 
 if __name__ == '__main__':
