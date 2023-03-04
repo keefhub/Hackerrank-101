@@ -1,8 +1,0 @@
-This challenge is a collection of input strings and a collection of query strings. For each query string, determine how many times it occurs in the list of 
-input strings. Return an array of the results.
-I will first convert the string into an array before I proceed with the deployment of code.
-
-int* matchingStrings(int strings_count, char** strings, int queries_count, char** queries, int* result_count) { }
-//When declaring char* / int*, it means declaration of pointer, pointing at char / int respectively. While char** / int** means the declaration of a pointer 
-to a pointer, pointing at char / int repectively (double pointer). 
-Meanwhile int *arr[9] would mean an array of pointers to an integer while int arr[9] is an array with 9 integers. 
