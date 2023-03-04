@@ -10,7 +10,7 @@ def matchingStrings(strings, queries):
 
     for i in range(len(queries())):
         v = queries[i]
-        results[i] = strings.count(v)   
+        results[i] = strings.count(v)
 
     return results
 
