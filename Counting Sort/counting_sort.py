@@ -13,8 +13,14 @@ import sys
 
 
 def countingSort(arr):
-    array = []
+    arr.sort()
+    count_array = []
+    sorted_tuple = tuple(arr)
+    for i in range(arr):
+        value = sorted_tuple.count(i)
+        count_array.append(value)
 
+    return result
 
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
