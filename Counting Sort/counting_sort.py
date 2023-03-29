@@ -13,7 +13,7 @@ import sys
 
 
 def countingSort(arr):
-    arr = []
+    array = []
 
 
 if __name__ == '__main__':
